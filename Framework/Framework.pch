@@ -1,0 +1,33 @@
+//
+//  Framework.pch
+//  Framework
+//
+//  Created by 金靖媛 on 16/1/26.
+//  Copyright © 2016年 jjy. All rights reserved.
+//
+
+#import "UIBarButtonItem+Extension.h"
+#import "UIColor+Extension.h"
+#import "UIImage+Load.h"
+#import "UIView+Frame.h"
+
+//应用信息
+#ifdef DEBUG // 调试状态, 打开LOG功能
+#define BOBOLog(...) NSLog(__VA_ARGS__)
+#else // 发布状态, 关闭LOG功能
+#define BOBOLog(...)
+#endif
+
+
+#define MainScreenHeight    [UIScreen mainScreen].bounds.size.height
+#define MainScreenWidth     [UIScreen mainScreen].bounds.size.width
+
+#define iPhone4 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
+#define iPhone6p ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define BoBoColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+// 随机色
+#define BoBoRandomColor HMColor(arc4random_uniform(256), arc4random_uniform(256), arc4random_uniform(256))
